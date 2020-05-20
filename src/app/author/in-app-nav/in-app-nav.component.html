@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top  flex-md-nowrap p-0">
+
+  <div class="navbar-brand ml-5">
+      <a class="" href=""> <img src="../assets/img/logo/logo.png" alt=""></a>
+  </div>
+    <div id="nav-icon1" (click)="toggle()" [ngClass]="{'nav-icon': true, 'open': open}">
+          <span></span> <span></span> <span></span>
+    </div>
+    <div [ngClass]="{'nav-menu':true, 'menuOpen': open}">
+        <ul  class="navbar-nav mr-auto">
+            <li class="mr-5">
+                <a class="nav-button" (click)="openLogOutDialog()">LOG OUT</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>

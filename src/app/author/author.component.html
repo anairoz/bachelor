@@ -1,0 +1,16 @@
+<app-in-app-nav></app-in-app-nav>
+<mat-sidenav-container class="row">
+  <mat-sidenav mode="side" opened class="col-sm-2">
+    <ul class="navbar-nav" >
+      <li>  <a class="nav-button" routerLink="/author">Профіль</a></li>
+      <hr>
+      <li><a class="nav-button" [routerLink]="[{ outlets: { content: ['tests'] } }]">Мої тести</a></li>
+      <li><a class="nav-button" [routerLink]="[{ outlets: { content: ['polls'] } }]">Мої опитування</a></li>
+      <li><a class="nav-button" [routerLink]="[{ outlets: { content: ['groups'] } }]">Мої групи</a></li>
+
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content class="col-sm">
+    <router-outlet name=content></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

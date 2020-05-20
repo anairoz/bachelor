@@ -1,0 +1,36 @@
+@import './variables';
+@import './mixin';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.mat-form-field{
+    width: 100%;
+
+}
+
+
+.mat-dialog-title {
+    text-align: center;
+}
+.mat-dialog-actions{
+    justify-content: space-between!important;
+}
+
+.navbar-nav{
+	display: flex;
+	list-style: none;
+}
+.nav-button{
+	text-decoration: none;
+	padding: .5rem 3rem;
+  font-size: 18px;
+  line-height: 30px;
+  color: #000000;
+	cursor: pointer;
+  background-color: #f8f9fa!important;
+
+}
+.icon{
+  max-width: 40px;
+}
+h1, h2, p{
+  cursor: default;
+}

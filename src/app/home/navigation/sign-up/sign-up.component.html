@@ -1,0 +1,65 @@
+<h2 mat-dialog-title>Sign In</h2>
+<mat-dialog-content>
+
+		<mat-form-field>
+			<input placeholder="Ім'я" matInput type="text" [formControl]= "firstNameFormControl">
+			<mat-error *ngIf="firstNameFormControl.hasError('required')">
+			  Ім'я <strong>обов'язкове</strong>
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field>
+			<input placeholder="Прізвище" matInput type="text" [formControl]= "secondNameFormControl" >
+			<mat-error *ngIf="secondNameFormControl.hasError('required')">
+			  Прізвище <strong>обов'язкове</strong>
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field>
+			<input placeholder="Username" matInput type="text" [formControl]= "usernameFormControl">
+
+			<mat-hint align="start">Мінімум 6 символів </mat-hint>
+			<mat-error *ngIf="usernameFormControl.hasError('minlength') && !usernameFormControl.hasError('required')">
+			  Username закороткий.
+			</mat-error>
+			<mat-error *ngIf="usernameFormControl.hasError('required')">
+			  Username <strong>обов'язковий</strong>
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput placeholder="Email" [formControl]="emailFormControl" name="email" >
+
+		    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+		      Будь ласка, введіть правильний e-mail
+		    </mat-error>
+		    <mat-error *ngIf="emailFormControl.hasError('required')">
+		      Email <strong>обов'язковий</strong>
+		    </mat-error>
+		</mat-form-field>
+
+		<mat-form-field>
+			<input matInput placeholder="Введіть пароль" [formControl]="passFormControl" [type]="hide ? 'password' : 'text'" name="password">
+		    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+		    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+		    </button>
+			<mat-error *ngIf="passFormControl.hasError('required')">
+				 Password <strong>обов'язковий</strong>
+			 </mat-error>
+ 			<mat-error *ngIf="passFormControl.hasError('minlength') && !passFormControl.hasError('required')">
+ 			  Пароль закороткий.
+ 			</mat-error>
+			<mat-hint align="start">Мінімум 6 символів </mat-hint>
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput placeholder="Підтвердіть пароль" [formControl]="confirmFormControl" [type]="hide ? 'password' : 'text'" name="confirmPassword">
+		    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+		    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+		    </button>
+			<mat-error *ngIf="confirmFormControl.hasError('required')">
+			 Підтвердіть пароль
+			 </mat-error>
+		</mat-form-field>
+    <mat-checkbox>Я автор</mat-checkbox>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button mat-button mat-dialog-close>Скасувати</button>
+	<button mat-button [mat-dialog-close]="true" cdkFocusInitial>Sign In</button>
+</mat-dialog-actions>

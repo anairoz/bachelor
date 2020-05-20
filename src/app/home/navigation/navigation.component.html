@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="navbar-brand">
+      <a class="" href="#"> <img src="../assets/img/logo/logo.png" alt=""></a>
+  </div>
+    <div id="nav-icon1" (click)="toggle()" [ngClass]="{'nav-icon': true, 'open': open}">
+          <span></span> <span></span> <span></span>
+    </div>
+    <div [ngClass]="{'nav-menu':true, 'menuOpen': open}">
+        <ul  class="navbar-nav mr-auto">
+            <li class="">
+                <a class="nav-button" (click)="openLogInDialog()">LOG IN </a>
+            </li>
+            <li class="vl">
+                <a class="nav-button" (click)="openSignUpDialog()">SIGN IN</a>
+            </li>
+        </ul>
+    </div>
+</nav>

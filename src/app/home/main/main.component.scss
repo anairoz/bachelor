@@ -1,0 +1,15 @@
+@import './src/sass/mixin';
+main {
+    @include background('../../../assets/img/main/bg.jpg');
+    height: 100vh;
+    background-attachment: fixed;
+    display: flex;
+}
+.main{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+h1 {
+  font-size: 6.5rem;
+  line-height: 6.5rem;
+  letter-spacing: .8rem;
+}
